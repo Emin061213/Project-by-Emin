@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Маленький человек в русской литературе</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,800;1,800&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf8;--ink:#14191c;--mute:#5d6870;--line:#d3d6d8;--light:#c4850f;--card:#efefec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0d0f;--ink:#e4e7e5;--mute:#8d99a1;--line:#252d32;--light:#f0b840;--card:#161c20}}
+:root[data-theme="dark"]{--bg:#0b0d0f;--ink:#e4e7e5;--mute:#8d99a1;--line:#252d32;--light:#f0b840;--card:#161c20}
+html{scroll-padding-top:70px;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:clamp(17px,1.1vw + 14px,20px)/1.7 "PT Serif",Georgia,serif;transition:background .35s,color .35s}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.1;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,summary:focus-visible{outline:2px solid var(--light);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--light);z-index:20}
+.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);transition:background .35s}
+.top .in{display:flex;justify-content:space-between;align-items:center;min-height:56px;gap:12px}
+.by{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:800;font-size:1.15rem}
+#theme{background:transparent;border:1px solid var(--ink);border-radius:999px;padding:8px 16px;min-height:44px;font-size:.9rem;white-space:nowrap}
+#theme:hover{background:var(--ink);color:var(--bg)}
+.hero{min-height:calc(100vh - 120px);min-height:calc(100svh - 120px);display:flex;flex-direction:column;justify-content:flex-end;padding:40px 0 28px;border-bottom:1px solid var(--line)}
+.hero h1{font-weight:800;font-size:clamp(2.8rem,15vw,8rem);letter-spacing:-.02em;overflow-wrap:anywhere}
+.hero p{color:var(--mute);max-width:32em;margin:18px 0 0}
+.scene{display:flex;align-items:flex-end;gap:14px;margin:26px 0 0;padding:12px 0}
+.win{width:24px;height:32px;background:var(--light);border-radius:2px 2px 0 0;box-shadow:0 0 28px var(--light);animation:glow 2.4s ease-out 1 both}
+@keyframes glow{from{opacity:.05}to{opacity:1}}
+.man{position:relative;width:12px;height:34px}
+.man::before{content:"";position:absolute;left:2px;top:0;width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.man::after{content:"";position:absolute;left:0;top:10px;width:12px;height:24px;border-radius:6px 6px 1px 1px;background:var(--ink)}
+section{padding:56px 0 0}
+h2{font-size:clamp(1.8rem,6vw,2.6rem);margin-bottom:18px}
+p{margin:0 0 1em}
+.def{border-left:3px solid var(--light);padding:2px 0 2px 18px}
+.traits{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;padding:0;list-style:none;margin:22px 0 0}
+.traits li{background:var(--card);padding:16px;border-radius:6px;font-size:.92rem;line-height:1.5;transition:transform .2s}
+.traits li:hover{transform:translateY(-3px)}
+.traits b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:1.1rem;margin-bottom:2px}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;align-items:center}
+.chip{background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 14px;min-height:44px;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.all{margin-left:auto;border-style:dashed}
+.list{border-bottom:1px solid var(--line)}
+details{border-top:1px solid var(--line)}
+details[hidden]{display:none}
+summary{cursor:pointer;list-style:none;padding:18px 28px 18px 0;display:grid;grid-template-columns:3.4rem 1fr;gap:2px 14px;align-items:baseline;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:1.4rem;color:var(--light)}
+details[open] summary::after{content:"–"}
+.yr{color:var(--mute);font-size:.9rem;grid-row:span 2}
+summary h3{font-size:1.35rem}
+.who{color:var(--mute);font-size:.9rem}
+.body{padding:0 0 22px calc(3.4rem + 14px);font-size:.97rem;line-height:1.65}
+.body em{color:var(--mute)}
+.arc{padding:0;list-style:none;margin:0}
+.arc li{padding:0 0 22px 22px;border-left:1px solid var(--line);position:relative}
+.arc li::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--light)}
+.arc b{font-family:"Playfair Display",Georgia,serif;font-size:1.15rem}
+.test{background:var(--card);padding:clamp(18px,4vw,32px);border-radius:8px}
+.test h3{font-size:1.3rem;margin-bottom:14px}
+.meta{color:var(--mute);font-size:.85rem;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:left;background:transparent;border:1px solid var(--line);border-radius:6px;padding:12px 14px;min-height:46px;margin:0 0 8px}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt.ok{border-color:#2e9e5b;background:rgba(46,158,91,.16)}
+.opt.no{border-color:#d0463c;background:rgba(208,70,60,.16)}
+.opt:disabled{cursor:default}
+.next{background:var(--ink);color:var(--bg);border:0;border-radius:6px;padding:11px 20px;min-height:44px;margin-top:8px}
+#fb{min-height:3em;margin:8px 0 0;font-size:.95rem}
+footer{margin-top:72px;padding:26px 0 40px;border-top:1px solid var(--line);text-align:center;overflow:hidden}
+footer small{color:var(--mute);font-size:.85rem}
+.sig{display:flex;align-items:center;gap:clamp(12px,3vw,24px);margin:6px 0 10px}
+.sig::before,.sig::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line))}
+.sig::after{background:linear-gradient(270deg,transparent,var(--line))}
+.sign{display:flex;align-items:baseline;font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:800;font-size:clamp(2.2rem,10vw,4rem);line-height:1.2;color:var(--ink)}
+.sign span{display:inline-block;transition:transform .25s,color .25s}
+.sign span:hover{transform:translateY(-.1em) rotate(-5deg);color:var(--light)}
+.sign .by{font-weight:500;font-size:.55em;color:var(--mute);margin-right:.35em}
+.sign .i{position:relative}
+.sign .i::after{content:"";position:absolute;left:.3em;top:.3em;width:.12em;height:.12em;border-radius:50%;background:var(--light);box-shadow:0 0 .3em var(--light)}
+@media(max-width:560px){.body{padding-left:0}.chip.all{margin-left:0}}
+@media(min-width:900px){.wrap{padding:0 32px}.traits{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header class="top"><div class="wrap in"><span class="by">Project by Emin</span><button id="theme" type="button"></button></div></header>
+<main class="wrap">
+<div class="hero">
+<h1>Маленький человек</h1>
+<p>Герой русской литературы XIX века: бедный, незаметный, зависимый от начальства и обстоятельств. Его жизнь не стоит ничьего внимания — и именно поэтому писатели смотрят на неё так пристально.</p>
+<div class="scene" aria-hidden="true"><span class="man"></span><span class="win"></span></div>
+</div>
+
+<section>
+<h2>Кто он такой</h2>
+<p class="def">«Маленький человек» — тип литературного героя с низким социальным положением, скромными целями и почти полным отсутствием власти над своей судьбой. Чаще всего это мелкий чиновник, станционный смотритель, переписчик бумаг.</p>
+<p>Термин связывают с критикой Белинского, который писал о Гоголе и о «натуральной школе». Главный вопрос всех этих произведений один: чего стоит человек в мире чинов, денег и равнодушия?</p>
+<ul class="traits">
+<li><b>Бедность</b>Жалованье мизерное, мечты вещественные: шинель, угол, дочь.</li>
+<li><b>Зависимость</b>От начальника, от чина, от «значительного лица».</li>
+<li><b>Унижение</b>Его обижают, не замечая, как обижают.</li>
+<li><b>Достоинство</b>Внутри он чувствует и любит не меньше «больших» людей.</li>
+</ul>
+</section>
+
+<section>
+<h2>Произведения</h2>
+<div class="tools" id="tools">
+<button class="chip" type="button" data-f="all" aria-pressed="true">Все</button>
+<button class="chip" type="button" data-f="p" aria-pressed="false">Пушкин</button>
+<button class="chip" type="button" data-f="g" aria-pressed="false">Гоголь</button>
+<button class="chip" type="button" data-f="d" aria-pressed="false">Достоевский</button>
+<button class="chip" type="button" data-f="c" aria-pressed="false">Чехов</button>
+<button class="chip all" type="button" id="openall">Раскрыть всё</button>
+</div>
+<div class="list">
+<details data-a="p"><summary><span class="yr">1831</span><h3>Станционный смотритель</h3><span class="who">А. С. Пушкин · Самсон Вырин</span></summary>
+<div class="body">Вырин живёт ради дочери Дуни. Проезжий офицер Минский увозит её в Петербург. Отец идёт за ней пешком, но его даже не пускают к дочери. Он спивается и умирает. <em>Идея:</em> Пушкин впервые показывает, что у «ничтожного» человека есть глубокое чувство, и призывает его пожалеть.</div></details>
+<details data-a="p"><summary><span class="yr">1833</span><h3>Медный всадник</h3><span class="who">А. С. Пушкин · Евгений</span></summary>
+<div class="body">Наводнение уничтожает дом возлюбленной Евгения, и он сходит с ума. Угрожая памятнику Петру I, он слышит за собой «тяжело-звонкое скаканье». <em>Идея:</em> столкновение личного счастья человека и государственной воли.</div></details>
+<details data-a="g"><summary><span class="yr">1842</span><h3>Шинель</h3><span class="who">Н. В. Гоголь · Акакий Акакиевич Башмачкин</span></summary>
+<div class="body">Переписчик бумаг копит деньги на новую шинель. В день, когда она появляется, её грабят. «Значительное лицо» отказывает ему в помощи, и Акакий Акакиевич умирает. После смерти по городу бродит призрак, срывающий шинели. <em>Идея:</em> вещь стала смыслом жизни, а общество не заметило смерти человека. Знаменитая фраза героя: «Оставьте меня, зачем вы меня обижаете?»</div></details>
+<details data-a="d"><summary><span class="yr">1846</span><h3>Бедные люди</h3><span class="who">Ф. М. Достоевский · Макар Девушкин</span></summary>
+<div class="body">Роман в письмах: пожилой чиновник Девушкин и юная Варенька Доброселова. Он читает «Шинель» и обижается: неужели он тоже так смешон? <em>Идея:</em> маленький человек впервые сам говорит о себе и осознаёт своё унижение.</div></details>
+<details data-a="d"><summary><span class="yr">1866</span><h3>Преступление и наказание</h3><span class="who">Ф. М. Достоевский · Мармеладов</span></summary>
+<div class="body">Спившийся чиновник Мармеладов исповедуется Раскольникову в трактире: дочь Соня вышла на улицу ради семьи. <em>Идея:</em> бедность доводит до края, но в человеке остаётся совесть и жажда прощения.</div></details>
+<details data-a="c"><summary><span class="yr">1883</span><h3>Смерть чиновника</h3><span class="who">А. П. Чехов · Червяков</span></summary>
+<div class="body">Во время спектакля Червяков чихает на лысину генерала и снова и снова извиняется, пока генерал не кричит на него. Червяков идёт домой и умирает. <em>Идея:</em> Чехов высмеивает не бедность, а добровольный страх перед чином, живущий внутри самого человека.</div></details>
+</div>
+</section>
+
+<section>
+<h2>Как менялся герой</h2>
+<ol class="arc">
+<li><b>Пушкин: жалость.</b> Обратить внимание на человека, которого раньше не замечали.</li>
+<li><b>Гоголь: боль и бунт.</b> Страдание доходит до фантастического возмездия.</li>
+<li><b>Достоевский: самосознание.</b> Герой сам понимает и проговаривает своё унижение.</li>
+<li><b>Чехов: ирония.</b> Рабство теперь в самом человеке, а не только в обстоятельствах.</li>
+</ol>
+</section>
+
+<section>
+<h2>Проверьте себя</h2>
+<div class="test" id="quiz"></div>
+</section>
+</main>
+
+<footer class="wrap">
+<div class="sig"><div class="sign" role="img" aria-label="by Emin"><span class="by">by</span><span>E</span><span>m</span><span class="i">ı</span><span>n</span></div></div>
+<small>Учебный проект по русской литературе</small>
+</footer>
+
+<script>
+(function(){
+var root=document.documentElement,tb=document.getElementById("theme");
+function eff(){return root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}
+function label(){tb.textContent=eff()==="dark"?"☀ Светлая тема":"☾ Тёмная тема"}
+try{var s=localStorage.getItem("th");if(s)root.setAttribute("data-theme",s)}catch(e){}
+label();
+tb.onclick=function(){var t=eff()==="dark"?"light":"dark";root.setAttribute("data-theme",t);label();try{localStorage.setItem("th",t)}catch(e){}};
+
+var bar=document.getElementById("bar");
+function prog(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?scrollY/h*100:0)+"%"}
+addEventListener("scroll",prog,{passive:true});prog();
+
+var chips=[].slice.call(document.querySelectorAll(".chip[data-f]")),ds=[].slice.call(document.querySelectorAll("details")),oa=document.getElementById("openall");
+chips.forEach(function(c){c.onclick=function(){
+chips.forEach(function(x){x.setAttribute("aria-pressed",String(x===c))});
+ds.forEach(function(d){d.hidden=c.dataset.f!=="all"&&d.dataset.a!==c.dataset.f});
+oa.textContent="Раскрыть всё";ds.forEach(function(d){d.open=false});
+}});
+oa.onclick=function(){var open=oa.textContent==="Раскрыть всё";
+ds.forEach(function(d){if(!d.hidden)d.open=open});
+oa.textContent=open?"Свернуть всё":"Раскрыть всё"};
+
+var Q=[["Кто умирает после извинений перед генералом?",["Акакий Башмачкин","Самсон Вырин","Червяков","Макар Девушкин"],2,"Червяков из рассказа Чехова «Смерть чиновника»."],
+["В какой повести герой копит на новую шинель?",["«Шинель»","«Бедные люди»","«Станционный смотритель»","«Медный всадник»"],0,"Это «Шинель» Гоголя, герой — Башмачкин."],
+["Какой роман Достоевского написан в форме писем?",["«Преступление и наказание»","«Бедные люди»","«Идиот»","«Игрок»"],1,"«Бедные люди» (1846): переписка Девушкина и Вареньки."],
+["У кого из героев дочь уезжает с проезжим офицером?",["Евгений","Мармеладов","Вырин","Червяков"],2,"Самсон Вырин, «Станционный смотритель» Пушкина."]];
+var qz=document.getElementById("quiz"),i=0,sc=0;
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+function show(){
+qz.innerHTML="";
+if(i>=Q.length){
+qz.appendChild(el("h3","","Результат: "+sc+" из "+Q.length));
+qz.appendChild(el("p","",sc===Q.length?"Отлично, вы хорошо знаете тему.":sc>=2?"Хороший результат. Перечитайте описания и попробуйте ещё раз.":"Загляните в раздел «Произведения» и попробуйте снова."));
+var r=el("button","next","Пройти заново");r.type="button";r.onclick=function(){i=0;sc=0;show()};qz.appendChild(r);return}
+var q=Q[i];
+qz.appendChild(el("div","meta","Вопрос "+(i+1)+" из "+Q.length));
+qz.appendChild(el("h3","",q[0]));
+var fb=el("p","");fb.id="fb";fb.setAttribute("aria-live","polite");
+var next=el("button","next",i===Q.length-1?"Показать результат":"Дальше");next.type="button";next.hidden=true;
+next.onclick=function(){i++;show()};
+var btns=q[1].map(function(t,k){
+var b=el("button","opt",t);b.type="button";
+b.onclick=function(){
+btns.forEach(function(x,j){x.disabled=true;if(j===q[2])x.classList.add("ok")});
+if(k===q[2]){sc++;fb.textContent="Верно. "+q[3]}else{b.classList.add("no");fb.textContent="Неверно. "+q[3]}
+next.hidden=false;next.focus();
+};
+qz.appendChild(b);return b});
+qz.appendChild(fb);qz.appendChild(next);
+}
+show();
+})();
+</script>
+</body>
+</html>
